@@ -1,0 +1,529 @@
+lazy_talk character text:
+  talk $character idle $text
+
+lazy_player_talk text:
+  talk $data.player idle $text
+
+lazy_player_think text:
+  think $data.player idle $text
+
+lazy_kogomi_talk_idle text:
+  talk $data.kogomi idle $text
+
+changePlayer:
+  change_player_character $data.player
+
+main:
+  set data.player "player"
+  set data.playerName "「」"  // %{$data.playerName} で中身を文中に表示できる。
+  set data.kogomi "unknown"
+  set data.kogomiSuki 0
+  set data.countSansai 0
+
+  // place
+  set_screen @empty 0
+  // tachi-e
+  set_screen @empty 1
+  // post
+  set_screen @empty 2
+  // me overlay ui
+  set_screen @empty 3
+  // dm background
+  set_screen @empty 4
+  // me overlay ui
+  set_screen @empty 5
+  // event bg
+  set_screen @empty 6
+  // event
+  set_screen @empty 7
+
+  set_screen mori 0 fadein 1000
+  set_screen @empty 1
+
+  play music Pohadka
+
+  "ブルルルル…"
+
+  p "おいおいマジか。"
+
+  "田舎の山奥でバイクは止まってしまった。"
+
+  tp "ガス欠か？でもメーター見るとまだあるし。"
+  p "はてどうしたもんか…"
+
+  set_screen kogomi-hyokkori 1 slide-right 400
+
+  k "何してるの？"
+
+  p "うわっ！"
+
+  set_screen @empty 1 fade 500
+
+  k "うわーっ！"
+
+  p "あっすみません。"
+
+  set_screen kogomi-tachie 1 fade 500
+
+  k "びっくりしたなぁもう"
+
+  tp "女の子だ。あれ、でもここまで来るのに人なんて見なかったけどな。"
+
+  k "お兄さんバイク止まっちゃったの？"
+
+  choice:
+    talk player idle "えっと…"
+
+    "うん…":
+      set data.player "onisan"
+      set data.playerName "お兄さん"
+      
+      k "あらら困ったね。"
+    
+    "お兄ちゃんって呼んで。":
+      set data.player "onichan"
+      set data.playerName "お兄ちゃん"
+
+      k "え？"
+
+    "こう見えてお姉さんなんだよね。":
+      set data.player "onesan"
+      set data.playerName "お姉さん"
+
+      k "えっごめんなさい。ヘルメットで顔隠れてたから。"
+      k "ハードボイルドな声してるね。"
+
+    "お姉ちゃんって呼んで。":
+      set data.player "onechan"
+      set data.playerName "お姉ちゃん"
+
+      k "ん？"
+
+  run changePlayer
+
+  p "…近くに連絡できるところないかな？携帯が圏外でさ。"
+
+  k "%{$data.playerName}のかっこいいバイクだね。見て良い？"
+
+  set_screen @empty 1 fade 500
+
+  p "いいけど…あの近くに電話できるところないかな？"
+
+  "女の子はくるくるとバイクの周りを回って見ている。"
+
+  p "電話…"
+
+  k "本当に動かないの？"
+
+  p "動かないよ。ほら…"
+  
+  "バイクのハンドルに手をかけ捻る。しかしなにも…"
+  "<span class='big'>ブルン！ブルルルル</span>"
+
+  p "あら！？"
+
+  k "動いた？良かったね。"
+
+  p "う？うん良かったぁ～。"
+
+  tp "ちょっと調子悪かっただけか？また止まったら怖いから今日は帰ろうか…"
+
+  k "%{$data.playerName}はどこに行くところだったの？"
+
+  p "ああ、この先にあるダムに行こうと思ってたの。でも今回はやめて帰ろうかな。"
+
+  k "え～なんで！私もそこまで行こうと思ってたのに！"
+
+  k "<b>山菜</b>取りに行くから乗せていってよ。"
+
+  p "へ～山菜なんて取れるんだ。でもまたバイク止まったら怖いしなぁ…"
+
+  k "大丈夫だって気のせいだったんでしょ？早く乗せて。"
+
+  "女の子はシートにもたれかかって催促してくる。"
+
+  p "うーん気のせいだったんかなぁ…まあメットインにもう一つあるから乗せれるか。あーでも子どもには大きいよなぁ…"
+
+  k "あーもうほらヘルメットあるから早く！！！"
+
+  p "お、おお。なんで持ってんの？"
+
+  "女の子がぐいぐいバイクに向けて前に押してくる。どうやら乗せて行くしかないようだ…"
+
+  p "おし、おらいくぞ！捕まってろヨォ！！！"
+
+  k "うん！"
+
+  "ぶるるるるるるるるおおおおおおおおおお"
+
+  k "あ、ちょっと止まって！あった！"
+
+  p "何が！？"
+
+  k "山菜が！"
+
+  jump lookfor_taranome
+  
+  // // タイムラインシステム用のグローバル変数
+  // set displayedpost.author (new Array "post-kogomi" "post-shanks")
+  // set displayedpost.icon (new Array "icon-kogomi" "icon-shanks")
+  // set displayedpost.nickname (new Array "こごみ" "shanks")
+  // set displayedpost.username (new Array "@kogomi0427" "@shanks")
+  // set displayedpost.article (new Array "今日あったお兄ちゃんきもきもだった～ｗ" "お前に教える")
+  // set displayedpost.image (new Array "none" "shanks-face")
+  // set displayedpost.runlabel (new Array "test0" "shanksTest")
+  
+  // set dm.received true
+
+  // run openMe
+
+lookfor_taranome:
+  set_screen taranome 0 slide-left 1000
+  
+  var hitboxTaranome (create_object 725 299)
+  set hitboxTaranome.width 50
+  set hitboxTaranome.height 127
+  set hitboxTaranome.onClick getTaranome
+
+  "これから山菜がありそうなところを選択してみてください。"
+  "ある場合は女の子が教えてくれます。"
+  "ない場合もあるのでそのときは「次に行く」ボタンを押してください。"
+
+getTaranome:
+  k これはタラの芽だね。木にトゲがあるからグローブしてる%{$data.playerName}が採って。
+  
+  p うん。本当に木の芽なんだ～。どうやって食べるのコレ。
+  
+  k 天ぷらが美味しいね。
+
+  add_item taranome 1
+
+  add data.countSansai 1
+
+  empty_sprites 0
+  
+  k "もう無さそうだから次の場所行こうか。"
+
+  jump lookfor_shidoke
+
+lookfor_shidoke:
+  set_screen shidoke 0 slide-left 1000
+  
+  var hitboxShidoke (create_object 358 186)
+  set hitboxShidoke.width 658
+  set hitboxShidoke.height 585
+  set hitboxShidoke.onClick getShidoke
+
+getShidoke:
+  p "まるでもみじのような葉っぱだ。"
+
+  k "それも食べられるよ。シドケ…じゃなくてモミジガサって言うの。"
+  k "まだ若いから葉っぱの部分を天ぷらで食べるのがいいね。"
+
+  p "へ～。"
+
+  add_item shidoke 1
+
+  add data.countSansai 1
+
+  empty_sprites 0
+  
+  k "次の行こ。%{$data.playerName}。"
+
+  jump lookfor_kogomi
+
+lookfor_kogomi:
+  set_screen kogomi 0 slide-left 1000
+  
+  var hitboxKogomi (create_object 642 5)
+  set hitboxKogomi.width 168
+  set hitboxKogomi.height 597
+  set hitboxKogomi.onClick getKogomi
+
+getKogomi:
+  k "あ、コゴミだ！"
+
+  p "こごみ？このぐるぐるしてるのが？"
+
+  k "クサソテツっていう植物の芽だよ。これはなかなかいいコゴミだね！"
+
+  p "これはどうやって食べるの？"
+
+  k "天ぷら。"
+
+  add_item kogomi 1
+  add data.countSansai 1
+
+  empty_sprites 0
+
+  k "…そういえば私の名前は「こごみ」って言うんだ。"
+
+  set data.kogomi "kogomi"
+
+  choice:
+    talk player idle "そうなんだ…"
+    
+    "いい名前だね。":
+      k "でしょ。"
+
+    "美味しそうな名前だね":
+      k "んー。"
+      k "私はわらびの方が好きかなぁ。"
+
+    "クセのある名前だね":
+      k "ん～？"
+      k "コゴミは生でも食べられるよ。"
+      k "おら食ってみろ。"
+
+  k "じゃあ次行こうか。"
+
+  jump lookfor_bakkegrew
+
+lookfor_bakkegrew:
+  set_screen bakkegrew 0 slide-left 1000
+  
+  var hitboxBakkegrew (create_object 200 0)
+  set hitboxBakkegrew.width 760
+  set hitboxBakkegrew.height 800
+  set hitboxBakkegrew.onClick getBakkegrew
+
+getBakkegrew:
+  empty_sprites 0
+
+  k "これはバッkじゃなくてふきのとうが大きくなったのだね。"
+
+  if (has_item? shidoke 1):
+    p "バッ…なんだって？"
+
+    k "えっとこっちではバッケって言うの…"
+
+    p "へー方言か。もみじみたいな山菜も違う方で言ってたよね。"
+
+    k "あーうんあれはシドケって言うんだよね…"
+
+    choice:
+      think player idle "なんか様子が変だな…"
+      
+      "方言のほうも聞きたいな。":
+        k "そう？"
+        k "%{$data.playerName}、こっちの人じゃないでしょ。だから方言少し恥ずかしいな…"
+
+        choice:
+          talk player idle "いやいや…"
+          "聞く機会がないから聞きたい。"
+            k "そうなんだ。"
+            k "じゃあ言えるのがあったら言おうかな。"
+          
+          "方言は立派な属性です。"
+            k "属性？"
+            k "それは%{$data.playerName}のほうの方言かな。"
+      
+      "バッケってどうやって食べるの？":
+        k "まだ小さいのを天ぷらにして食べるの。"
+        
+        p "なんか…ほぼ天ぷらじゃない？"
+
+        k "私が天ぷら好きだからかも。"
+        k "でもふきのとうは味噌に合わせても美味しいよ。"
+        k "苦みがいいんじゃよね～。"
+
+        if (== $data.kogomi "kogomi"):
+          p "こごみちゃんって大人だね。子どものころなんか山菜食べたことないよ。"
+
+          k "ん！？まあ小さい頃から食べてるし。"
+
+  jump lookfor_huki
+
+lookfor_huki:
+  set_screen huki 0 slide-left 1000
+  
+  var hitboxHuki (create_object 643 102)
+  set hitboxHuki.width 432
+  set hitboxHuki.height 486
+  set hitboxHuki.onClick getHuki
+
+getHuki:
+  p "これは見たことある気がするな。"
+
+  k "フキだね。葉っぱから伸びている部分を食べるの。"
+  k "ふきのとうがお花になっている今が美味しいときだよ。"
+
+  add_item huki 1
+
+  add data.countSansai 1
+
+  empty_sprites 0
+
+  p "あれ、もしかしてフキとふきのとうって関係あるの？"
+
+  k "うん。フキのお花の蕾がふきのとうだよ。別々に生えてくるからわかりづらいかもね。"
+
+  if (== $data.kogomiSuki 5):
+    p "へ～。フキも天ぷらで食べるの？"
+
+    k "いや煮て食べる。"
+
+  jump lookfor_kogomigrew
+
+lookfor_kogomigrew:
+  set_screen kogomigrew 0 slide-left 1000
+  
+  var hitboxKogomigrew (create_object 0 66)
+  set hitboxKogomigrew.width 1440
+  set hitboxKogomigrew.height 734
+  set hitboxKogomigrew.onClick getKogomigrew
+
+getKogomigrew:
+  empty_sprites 0
+  
+  k "これはゴゴミが育ったあとだね。葉が開ききってる。"
+
+  p "なんかシダ？っぽい感じがする。大昔から姿が変わってないっていう。"
+  
+  if (has_item? kogomi 1):
+    k "うーんそこらへんあまりわからないけど大昔の人達と同じもの食べているかもね。"
+
+    p "なんかちょっとロマンがあるね。"
+
+  jump end_sansaitori
+
+checkSansai:
+  k "ええと取れたのは…"
+
+  "女の子は山菜を入れたビニール袋を覗き込む。"
+
+  if (has_item? taranome 1):
+    k "タラの芽"
+
+  if (has_item? shidoke 1):
+    k "シドケ"
+
+  if (has_item? kogomi 1):
+    k "こごみ"
+
+  if (has_item? huki 1):
+    k "フキ"
+
+  if (== $data.countSansai 1):
+    p "これ食べられるの？"
+  
+  elseif (== $data.countSansai 2):
+    p "本当に採れるんだね～！"
+
+  elseif (== $data.countSansai 3):
+    p "すごい採れたね！！"
+
+  elseif (== $data.countSansai 4):
+    p "これ大量じゃない！！！無料だよ！？"
+
+  k "んーこんなもんか。"
+
+end_sansaitori:
+  set_screen takidam 0 slide-bottom 1000
+
+  "バイクを乗り降りしながら山菜を探し続け…気がつけば目的地に到着していた。"
+  
+  p "ふう、ちょっと流石に山道歩くのは疲れるなぁ。"
+
+  p "いつの間にかダムに着いてるし。"
+
+  if (>= $data.countSansai 1):
+    k "うんまぁこれくらいで良いでしょ。"
+
+    run checkSansai
+
+    if (== $data.countSansai 4):
+      jump goto_takidam
+
+    else:
+      jump goodbye_kogomi
+
+  else:
+    k "なんにも取れなかったー！"
+    k "%{$data.playerName}使えない！"
+
+    "だーーーっ！！！"
+
+    tp "走って山の中へ行ってしまった。帰れるのか？"
+
+    p "やたら山菜に詳しいし、いきなり出てはいきなり消えるし、不思議な子だったなあ。"
+    p "まあダムの写真撮って帰るか…"
+
+    tp "若干狐につままれた思いをしたこの体験は、誰に話すでもなく心に残っている。"
+
+    change_scene start-menu
+
+goto_takidam:
+  k "ねえ、%{$data.playerName}。これからダム見に行くんでしょ。"
+
+  p "うん。もともとその予定だったし。"
+
+  k "私も行く。"
+
+  p "え？"
+
+  k "山菜も十分とれたし、もうヒマだもん。だめ？"
+
+  choice:
+    talk player idle "えーと…"
+
+    "いいよ":
+      k "やったー！"
+        
+      run rendezvousTakidam
+    
+    "だめ":
+      k "えーなんで！"
+      
+      choice:
+        talk player idle "うーん…"
+        "やっぱOK":
+          run rendezvousTakidam
+
+        "どうしてもダメ"
+          k "バカ！"
+
+          p "バカとはなんだバカとは。"
+
+          k "スタートメニューに戻れビーム！"
+
+          p "うわっ！なんだ！"
+
+          "眼の前が真っ白になった！"
+
+          change_scene start-menu
+
+goodbye_kogomi:
+  k "ありがとね、%{$data.playerName}。"
+  
+  p "いいよ、結構楽しかったし。"
+  
+  k "わたし、もう少し採ってこようかな。"
+  k "%{$data.playerName}はダム見に行くんでしょ？"
+
+  p "ん？そうだね。"
+
+  k "じゃあね。"
+
+  "たったったったったっ…"
+
+  "女の子は山の中へと消えていった。"
+
+  tp "…あの子はどうやって帰るんだ？山の中に家でもあるんだろうか。"
+
+  p "白昼夢でも見た気分だ…ダムの写真撮って帰るか。"
+
+  if (has_item? kogomi 1):
+    "駐車場まで運ぶためにバイクへ向かう。"
+
+    p "ん？なんだこれ。"
+
+    "ハンドル部分にビニール袋がかけられている。"
+
+    p "これは…コゴミだ。"
+
+    "袋にはコゴミが数本入っていた。みずみずしい緑が美しい。"
+    "あれから山に入るたびについ探してしまう。"
+    "またあの子に会えないかと淡い期待を持ちながら…"
+
+  change_scene start-menu

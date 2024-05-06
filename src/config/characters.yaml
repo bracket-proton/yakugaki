@@ -1,0 +1,41 @@
+---
+config:
+  imagesPath: img/characters/
+  playerCharacter: player
+  gameCharacter: game
+characters:
+  game:
+    name: ""
+    color: white
+  player:
+    style:
+      color: orange
+    name: "あなた"
+  onisan:
+    style:
+      color: orange
+    name: "お兄さん"
+  onichan:
+    style:
+      color: orange
+    name: "お兄ちゃん"
+  onesan:
+    style:
+      color: orange
+    name: "お姉さん"
+  onechan:
+    style:
+      color: orange
+    name: "お姉ちゃん"
+  unknown:
+    style:
+      color: MediumSpringGreen
+      textCss:
+        fontFamily: "HachiMaruPop Regular"
+    name: "？？？"
+  kogomi:
+    style:
+      color: MediumSpringGreen
+      textCss:
+        fontFamily: "HachiMaruPop Regular"
+    name: "こごみ"

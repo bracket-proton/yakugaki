@@ -1,0 +1,115 @@
+screens:
+  kogomi-hyokkori:
+    background: "img/backgrounds/kogomi-hyokkori.webp"
+  kogomi-tachie:
+    background: "img/backgrounds/kogomi-tachie.webp"
+  mori:
+    background: "img/backgrounds/morinonaka.webp"
+  taranome:
+    background: "img/backgrounds/taranome.webp"
+    buttons:
+      - id: lookfor_shidoke
+        enabled: true
+        text: "次へ行く"
+        position:
+          left: 0
+          top: 0
+          width: 200
+          height: 50
+        anchor:
+          x: 0
+          y: 0
+        action: lookfor_shidoke
+  kogomi:
+    background: "img/backgrounds/kogomi.webp"
+    buttons:
+      - id: lookfor_bakkegrew
+        enabled: true
+        text: "次へ行く"
+        position:
+          left: 0
+          top: 0
+          width: 200
+          height: 50
+        anchor:
+          x: 0
+          y: 0
+        action: lookfor_bakkegrew
+  kogomigrew:
+    background: "img/backgrounds/kogomigrew.webp"
+    buttons:
+      - id: end_sansaitori
+        enabled: true
+        text: "次へ行く"
+        position:
+          left: 0
+          top: 0
+          width: 200
+          height: 50
+        anchor:
+          x: 0
+          y: 0
+        action: end_sansaitori
+  huki:
+    background: "img/backgrounds/huki.webp"
+    buttons:
+      - id: lookfor_kogomigrew
+        enabled: true
+        text: "次へ行く"
+        position:
+          left: 0
+          top: 0
+          width: 200
+          height: 50
+        anchor:
+          x: 0
+          y: 0
+        action: lookfor_kogomigrew
+  shidoke:
+    background: "img/backgrounds/shidoke.webp"
+    buttons:
+      - id: lookfor_kogomi
+        enabled: true
+        text: "次へ行く"
+        position:
+          left: 0
+          top: 0
+          width: 200
+          height: 50
+        anchor:
+          x: 0
+          y: 0
+        action: lookfor_kogomi
+  bakkegrew:
+    background: "img/backgrounds/bakkegrew.webp"
+    buttons:
+      - id: lookfor_huki
+        enabled: true
+        text: "次へ行く"
+        position:
+          left: 0
+          top: 0
+          width: 200
+          height: 50
+        anchor:
+          x: 0
+          y: 0
+        action: lookfor_huki
+  takidam:
+    background: "img/backgrounds/takidam.webp"
+  takidam-ov:
+    background: "img/backgrounds/takidam-ov.webp"
+  takidam-tenpa:
+    background: "img/backgrounds/takidam-tenpa.webp"
+  takidam-ura:
+    background: "img/backgrounds/takidam-ura.webp"
+  takidam-yasuragi:
+    background: "img/backgrounds/takidam-yasuragi.webp"
+  bg:
+    background: ""
+  mebg:
+    background: ""
+  meui:
+    background: ""
+  default:
+    background: ""

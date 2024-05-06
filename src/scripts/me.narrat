@@ -1,0 +1,361 @@
+openMe:
+    set_screen mebg 2 slide-bottom 1000
+    set_screen meui 3
+
+    set me.ui.sidebar (create_object 0 0)
+    set me.ui.sidebar.cssClass me-ui-sidebar
+    set me.ui.sidebar.layer 3
+    set me.ui.sidebar.width 47
+    set me.ui.sidebar.height 800
+    set me.ui.logo (create_object 0 0 $me.ui.sidebar)
+    set me.ui.logo.cssClass me-ui-logo
+    set me.ui.logo.width 47
+    set me.ui.logo.height 47
+    set me.ui.logo.text "メ"
+    set me.ui.write (create_sprite me-write 0 47 $me.ui.sidebar)
+    set me.ui.dm (create_sprite me-dm 0 94 $me.ui.sidebar)
+    if (== $dm.received true):
+        set me.ui.dm.onClick $dm.whatslabel
+        set me.ui.notification (create_sprite me-dm-notification 3 8 $me.ui.dm)
+        set me.ui.notification.cssClass me-ui-notification
+        animate .me-ui-notification me-ui-notification-zoomup
+
+    set me.ui.power (create_sprite me-power 0 753 $me.ui.sidebar)
+    set me.ui.power.onClick tire
+    animate .me-ui-sidebar me-ui-sidebar-slidein
+
+    run meTimeline
+
+meTimeline:
+    set post.new (create_object -543 47)
+    set post.new.layer 2
+    set post.new.width 543
+    set post.new.height 241
+    set post.new.cssClass $displayedpost.author[1]
+    set post.new.onClick $displayedpost.runlabel[1]
+    set post.new-icon (create_sprite $displayedpost.icon[1] 5 0 $post.new)
+    set post.new-icon.width 64
+    set post.new-icon.height 64
+    set post.new-text.nickname (create_object 68 0 $post.new)
+    set post.new-text.nickname.cssClass post-nickname
+    set post.new-text.nickname.text $displayedpost.nickname[1]
+    set post.new-text.nickname.width 100
+    set post.new-text.nickname.height 20
+    set post.new-text.username (create_object 100 0 $post.new-text.nickname)
+    set post.new-text.username.cssClass post-text
+    set post.new-text.username.text $displayedpost.username[1]
+    set post.new-text.username.width 100
+    set post.new-text.username.height 20
+    set post.new-text.article (create_object 69 36 $post.new)
+    if (== $displayedpost.image[1] "none"):
+        set post.new-text.article.width 479
+    else:
+        set post.new-text.article.width 238
+        set post.new-text.image (create_sprite $displayedpost.image[1] 297 0 $post.new)
+        set post.new-text.image.width 241
+        set post.new-text.image.height 241
+    set post.new-text.article.height 205
+    set post.new-text.article.cssClass post-article
+    set post.new-text.article.text $displayedpost.article[1]
+    set post.new-text.heart (create_object 0 226 $post.new)
+    set post.new-text.heart.width 16
+    set post.new-text.heart.height 16
+    set post.new-text.heart.cssClass post-text
+    set post.new-text.heart.text "♡"
+
+    set post.old (create_object -543 298)
+    set post.old.layer 2
+    set post.old.width 543
+    set post.old.height 241
+    set post.old.cssClass $displayedpost.author[0]
+    set post.old.onClick $displayedpost.runlabel[0]
+    set post.old-icon (create_sprite $displayedpost.icon[0] 5 0 $post.old)
+    set post.old-icon.width 64
+    set post.old-icon.height 64
+    set post.old-text.nickname (create_object 68 0 $post.old)
+    set post.old-text.nickname.cssClass post-nickname
+    set post.old-text.nickname.text $displayedpost.nickname[0]
+    set post.old-text.nickname.width 100
+    set post.old-text.nickname.height 20
+    set post.old-text.username (create_object 100 0 $post.old-text.nickname)
+    set post.old-text.username.cssClass post-text
+    set post.old-text.username.text $displayedpost.username[0]
+    set post.old-text.username.width 100
+    set post.old-text.username.height 20
+    set post.old-text.article (create_object 69 36 $post.old)
+    if (== $displayedpost.image[0] "none"):
+        set post.old-text.article.width 479
+    else:
+        set post.old-text.article.width 238
+        set post.old-text.image (create_sprite $displayedpost.image[0] 297 0 $post.old)
+        set post.old-text.image.width 241
+        set post.old-text.image.height 241
+    set post.old-text.article.height 205
+    set post.old-text.article.cssClass post-article
+    set post.old-text.article.text $displayedpost.article[0]
+    set post.old-text.heart (create_object 0 226 $post.old)
+    set post.old-text.heart.width 16
+    set post.old-text.heart.height 16
+    set post.old-text.heart.cssClass post-text
+    set post.old-text.heart.text "♡"
+    
+    set post.kaidou (create_object -543 549)
+    set post.kaidou.layer 2
+    set post.kaidou.width 543
+    set post.kaidou.height 120
+    set post.kaidou.cssClass post-kaidou
+    set post.kaidou.onClick kaidou
+    set post.kaidou-icon (create_sprite icon-kaidou 5 0 $post.kaidou)
+    set post.kaidou-icon.width 64
+    set post.kaidou-icon.height 64
+    set post.kaidou-text.nickname (create_object 108 10 $post.kaidou)
+    set post.kaidou-text.nickname.cssClass post-nickname
+    set post.kaidou-text.nickname.text kaidou
+    set post.kaidou-text.username (create_object 118 0 $post.kaidou-text.nickname)
+    set post.kaidou-text.username.cssClass post-text
+    set post.kaidou-text.username.text "@nandemosorou"
+    set post.kaidou-text.article (create_object 69 36 $post.kaidou)
+    set post.kaidou-text.article.width 479
+    set post.kaidou-text.article.height 205
+    set post.kaidou-text.article.cssClass post-article
+    set post.kaidou-text.article.text "なんでもそろう<br /><span style=\"color: #1d9bf0;\">kaidou.omise</span>"
+    set post.kaidou-text.heart (create_object 0 104 $post.kaidou)
+    set post.kaidou-text.heart.width 32
+    set post.kaidou-text.heart.height 16
+    set post.kaidou-text.heart.cssClass post-text
+    set post.kaidou-text.heart.text "AD"
+
+    set post.ulsite (create_object -543 679)
+    set post.ulsite.layer 2
+    set post.ulsite.width 543
+    set post.ulsite.height 120
+    set post.ulsite.cssClass post-ulsite
+    set post.ulsite.onClick ulsite
+    set post.ulsite-icon (create_sprite icon-ulsite 5 0 $post.ulsite)
+    set post.ulsite-icon.width 64
+    set post.ulsite-icon.height 64
+    set post.ulsite-text.nickname (create_object 108 10 $post.ulsite)
+    set post.ulsite-text.nickname.cssClass post-nickname
+    set post.ulsite-text.nickname.text "ULsite"
+    set post.ulsite-text.username (create_object 118 0 $post.ulsite-text.nickname)
+    set post.ulsite-text.username.cssClass post-text
+    set post.ulsite-text.username.text "@nandemoureru"
+    set post.ulsite-text.article (create_object 69 36 $post.ulsite)
+    set post.ulsite-text.article.width 479
+    set post.ulsite-text.article.height 205
+    set post.ulsite-text.article.cssClass post-article
+    set post.ulsite-text.article.text "なんでも売れる<br /><span style=\"color: #1d9bf0;\">ulsite.omise</span>"
+    set post.ulsite-text.heart (create_object 0 104 $post.ulsite)
+    set post.ulsite-text.heart.width 32
+    set post.ulsite-text.heart.height 16
+    set post.ulsite-text.heart.cssClass post-text
+    set post.ulsite-text.heart.text "AD"
+
+    animate (concat . $displayedpost.author[1]) post1-slidein
+    animate (concat . $displayedpost.author[0]) post2-slidein
+    animate .post-kaidou post3-slidein
+    animate .post-ulsite post4-slidein
+
+    "新しい投稿はあるかな？"
+
+pushPost authorname articletext imagename runlabel:
+    shift $displayedpost.author
+    shift $displayedpost.icon
+    shift $displayedpost.nickname
+    shift $displayedpost.username
+    shift $displayedpost.article
+    shift $displayedpost.image
+    shift $displayedpost.runlabel
+
+    if (== $authorname iroha):
+        push $displayedpost.author "post-iroha"
+        push $displayedpost.icon "icon-iroha"
+        push $displayedpost.nickname "iroha"
+        push $displayedpost.username "@tofu_daisuki"
+    elseif (== $authorname ruka):
+        push $displayedpost.author "post-ruka"
+        push $displayedpost.icon "icon-ruka"
+        push $displayedpost.nickname "ruka"
+        push $displayedpost.username "@ruka_cosplay"
+    elseif (== $authorname riamu):
+        push $displayedpost.author "post-riamu"
+        push $displayedpost.icon "icon-riamu"
+        push $displayedpost.nickname "riamu"
+        push $displayedpost.username "@xxx_yamuyamu_killme_xxx"
+    elseif (== $authorname anon):
+        push $displayedpost.author "post-anon"
+        push $displayedpost.icon "icon-anon"
+        push $displayedpost.nickname "announce"
+        push $displayedpost.username "@thanks_for_playing"
+
+    push $displayedpost.article $articletext
+    push $displayedpost.image $imagename
+    push $displayedpost.runlabel $runlabel
+
+// DM
+
+dmWhoWhen author hours minutes dmspan:
+    set dm.hours $hours
+    set dm.minutes $minutes
+    set dm.dmspan $dmspan
+
+    var iconname (concat "icon-" $author)
+
+    set_screen dmbg 4 slide-right 1000
+    set_screen dmui 5
+
+    set dm.headerbg (create_object 0 0)
+    set dm.headerbg.cssClass dm-headerbg
+    set dm.headerbg.layer 5
+    set dm.headerbg.width 600
+    set dm.headerbg.height 100
+    set dm.backbutton (create_sprite me-back 32 32 $dm.headerbg)
+    set dm.iconimage (create_sprite $iconname 268 18 $dm.headerbg)
+    set dm.iconimage.width 64
+    set dm.iconimage.height 64
+    set dm.footerbg (create_object 0 700)
+    set dm.footerbg.cssClass dm-footerbg
+    set dm.footerbg.layer 5
+    set dm.footerbg.width 600
+    set dm.footerbg.height 100
+    set dm.photobutton (create_sprite me-photo 190 33 $dm.footerbg)
+    set dm.messageprompt (create_object 228 38 $dm.footerbg)
+    set dm.messageprompt.cssClass "dm-messageprompt"
+    set dm.messageprompt.width 144
+    set dm.messageprompt.height 24
+    set dm.messageprompt.text "メッセージを作成"
+
+    animate .dm-headerbg dm-header-slidein
+    animate .dm-footerbg dm-footer-slidein
+
+    set dm.messagefield (create_object 0 100)
+    set dm.messagefield.layer 4
+    set dm.messagefield.width 600
+    set dm.messagefield.height 1600
+    set dm.messagefield.cssClass dm-messagefield
+
+createDM author text top:
+    var color (concat "dm.themecolor" "%{$dm.number}")
+    var timestamp (concat "dm.timestamp" "%{$dm.number}")
+    var message (concat "dm.message" "%{$dm.number}")
+    set $color (create_object 0 $top $dm.messagefield)
+    set (concat "%{$color}" .cssClass) (concat "color-" "%{$author}" " " "color-" "%{$dm.number}")
+    set (concat "%{$color}" .width) 5
+    set (concat "%{$color}" .height) 30
+    set $timestamp (create_object 10 (+ $top -15) $dm.messagefield)
+    set (concat "%{$timestamp}" .text) $dm.timestamptext
+    set (concat "%{$timestamp}" .cssClass) (concat "dm-text dm-timestamp " "dm-timestamp-" "%{$dm.number}")
+    set $message (create_object 10 $top $dm.messagefield)
+    set (concat "%{$message}" .text) $text
+    set (concat "%{$message}" .cssClass) (concat "dm-text " "dm-text-" "%{$dm.number}")
+    set (concat "%{$message}" .width) 590
+    set (concat "%{$message}" .height) 24
+    animate (concat ".color-" "%{$dm.number}") dm-color-slidein
+    animate (concat ".dm-timestamp-" "%{$dm.number}") dm-timestamp-fadein
+    animate (concat ".dm-text-" "%{$dm.number}") dm-text-slidein
+
+createPlayerDM text top:
+    var color (concat "dm.themecolor" "%{$dm.number}")
+    var timestamp (concat "dm.timestamp" "%{$dm.number}")
+    var message (concat "dm.message" "%{$dm.number}")
+    set $color (create_object 595 $top $dm.messagefield)
+    set (concat "%{$color}" .cssClass) (concat "color-player" " " "color-" "%{$dm.number}")
+    set (concat "%{$color}" .width) 5
+    set (concat "%{$color}" .height) 30
+    set $timestamp (create_object 555 (+ $top -15) $dm.messagefield)
+    set (concat "%{$timestamp}" .text) $dm.timestamptext
+    set (concat "%{$timestamp}" .cssClass) (concat "dm-text dm-timestamp " "dm-timestamp-" "%{$dm.number}")
+    set $message (create_object 0 $top $dm.messagefield)
+    set (concat "%{$message}" .text) $text
+    set (concat "%{$message}" .cssClass) (concat "dm-text " "dm-player " "dm-text-" "%{$dm.number}")
+    set (concat "%{$message}" .width) 590
+    set (concat "%{$message}" .height) 24
+    animate (concat ".color-" "%{$dm.number}") dm-player-color-slidein
+    animate (concat ".dm-timestamp-" "%{$dm.number}") dm-timestamp-fadein
+    animate (concat ".dm-text-" "%{$dm.number}") dm-player-text-slidein
+
+createDMImage author image top:
+    var color (concat "dm.themecolor" "%{$dm.number}")
+    var message (concat "dm.message" "%{$dm.number}")
+    set $color (create_object 0 $top $dm.messagefield)
+    set (concat "%{$color}" .cssClass) (concat "color-" "%{$author}" " " "color-" "%{$dm.number}")
+    set (concat "%{$color}" .width) 5
+    set (concat "%{$color}" .height) 240
+    set $message (create_sprite $image -240 $top $dm.messagefield)
+    set (concat "%{$message}" .cssClass) (concat "dm-text " "dm-text-" "%{$dm.number}")
+    set (concat "%{$message}" .width) 240
+    set (concat "%{$message}" .height) 240
+    animate (concat ".color-" "%{$dm.number}") dm-color-slidein
+    animate (concat ".dm-text-" "%{$dm.number}") dm-image-slidein
+
+manageDM author:
+    // image padding = (image height + margin) - (message height + margin)
+    // 210 = (240 + 30) - (30 + 30)
+    var imagepadding 210
+
+    if (!= $dm.number 0):
+        if (== $author "player"):
+            add dm.minutes 5
+        else:
+            add dm.minutes $dm.dmspan
+    
+    if (>= $dm.minutes 60):
+        add dm.minutes -60
+        add dm.hours 1
+    if (>= $dm.hours 24):
+        add dm.hours -24
+
+    if (<= $dm.minutes 9):
+        var minstring (concat "0" "%{$dm.minutes}")
+    else:
+        var minstring "%{$dm.minutes}"
+    if (<= $dm.hours 9):
+        var hstring (concat "0" "%{$dm.hours}")
+    else:
+        var hstring "%{$dm.hours}"
+
+    set dm.timestamptext (concat $hstring ":" $minstring)
+
+    var top (+ (* $dm.number 60) (* $dm.images $imagepadding) 30)
+    
+    add dm.number 1
+    
+    return $top
+
+sendDM author text:
+    var top (run manageDM $author)
+    run createDM $author $text $top
+
+sendPDM text:
+    var author "player"
+    var top (run manageDM $author)
+    run createPlayerDM $text $top
+
+sendDMImage author image:
+    var top (run manageDM $author)
+    add dm.images 1
+    
+    run createDMImage $author $image $top
+
+scrollDM:
+    animate .dm-messagefield dm-scroll
+
+notReceivedDM:
+    think player idle "新しいDMは来てないようだ。"
+
+endDM:
+    set dm.received false
+    set me.ui.dm.onClick notReceivedDM
+    delete_sprite $me.ui.notification
+
+    animate .dm-headerbg dm-header-slideout
+    animate .dm-footerbg dm-footer-slideout
+    set dm.headerbg.y -100
+    set dm.footerbg.y 800
+    wait 400
+    empty_sprites 4
+    empty_sprites 5
+    set_screen @empty 4 slide-left 1000
+    set_screen @empty 5
+    set dm.number 0
+    set dm.images 0

@@ -1,0 +1,44 @@
+categories:
+  - id: sansai
+    title: 山菜
+
+items:
+  taranome:
+    name: タラの芽
+    description: タラノキの芽。
+    icon: img/items/taranome.png
+    category: sansai
+    tag: default
+    onUse:
+      action: run
+      label: eat_taranome
+  shidoke:
+    name: モミジガサ
+    description: もみじの様な葉っぱの山菜。あの子はシドケ？とか言ってたな。
+    icon: img/items/shidoke.png
+    category: sansai
+    tag: default
+    onUse:
+      action: run
+      label: eat_taranome
+  kogomi:
+    name: コゴミ
+    description: クサソテツの若芽。あの子の名前の由来だ。
+    icon: img/items/kogomi.png
+    category: sansai
+    tag: default
+    onUse:
+      action: run
+      label: eat_taranome
+  huki:
+    name: フキ
+    description: フキは茎と葉をつなぐ葉柄の部分が食用だ。
+    icon: img/items/huki.png
+    category: sansai
+    tag: default
+    onUse:
+      action: run
+      label: eat_taranome
+interactionTags:
+  default:
+    onlyInteractOutsideOfScripts: true

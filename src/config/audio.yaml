@@ -1,0 +1,10 @@
+files:
+  Pohadka:
+    loop: true
+    src: music/IMSLP426388-PMLP118048-Janacek_Pohadka_Un_Conte_Boschi_Sadlo.mp3
+options:
+  volume: 0.5
+  musicFadeInTime: 0.5
+  musicFadeInDelay: 0.5
+  musicFadeOutTime: 0.5
+audioTriggers: {}

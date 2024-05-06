@@ -1,0 +1,135 @@
+/*  See https://docs.narrat.dev/guides/theming-the-game-and-ui for info on how to customise your game with CSS. */
+
+#narrat {
+  /* Customise CSS variables here. They will override the existing narrat ones. You can also add your own variables */
+  --bg-color: black;
+  --text-color: #d9e1f2;
+  --primary: hsl(255, 30%, 55%);
+  --focus: hsl(210, 90%, 50%);
+  --secondary: #42b983;
+  --dialog-box-bg: #131720c4;
+  --font-family: "Yomogi Regular", "Helvetica", sans-serif, "Arial",
+    "sans-serif";
+  --selected-border: initial;
+  /* You can easily override a CSS style by making it more specific than the original one.
+  Any css added here will applied to elements inside of #narrat and be likely more specific than their original version */
+}
+
+/* Add any other CSS you want here */
+
+@font-face {
+  font-family: "Yomogi Regular";
+  src: url("/fonts/Yomogi-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "HachiMaruPop Regular";
+  src: url("/fonts/HachiMaruPop-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "IBMPlexSansJP Bold";
+  src: url("/fonts/IBMPlexSansJP-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "IBMPlexSansJP Regular";
+  src: url("/fonts/IBMPlexSansJP-Regular.woff2") format("woff2");
+}
+
+.big {
+  font-size: 2em;
+}
+
+.me-ui-sidebar {
+  background-color: white;
+}
+
+.me-ui-logo {
+  background-color: black;
+}
+
+.post-kogomi {
+  background-color: white;
+  border-left: 5px solid green;
+}
+
+.post-anon {
+  background-color: white;
+  border-left: 5px solid black;
+}
+.post-shanks {
+  background-color: white;
+  border-left: 5px solid red;
+}
+
+.post-kaidou {
+  background-color: white;
+  border-left: 5px solid orange;
+}
+
+.post-ulsite {
+  background-color: white;
+  border-left: 5px solid purple;
+}
+
+div.post-nickname span {
+  font-family: "IBMPlexSansJP Bold";
+  font-size: 16px;
+  font-weight: normal;
+  color: black;
+}
+
+div.post-text span {
+  font-family: "IBMPlexSansJP Regular";
+  font-size: 16px;
+  font-weight: normal;
+  color: black;
+}
+
+div.post-article {
+  font-family: "IBMPlexSansJP Regular";
+  justify-content: start;
+  align-items: start;
+}
+
+div.post-article span {
+  font-size: 24px;
+  font-weight: normal;
+  color: black;
+}
+
+.viewport-layer-background {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.viewport-object.selected {
+  border-left: 5px solid red;
+}
+
+#narrat {
+  background-image: url("/img/backgrounds/morinonaka.webp");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+#game-splash-screen {
+  background-color: #0000004e;
+}
+
+#game-menu {
+  background-color: #0000004e;
+}
+
+#viewport-layer-background-bg {
+  background-color: black;
+}
+
+#viewport-layer-background-mebg {
+  background-color: white;
+}

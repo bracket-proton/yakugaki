@@ -1,0 +1,158 @@
+animations:
+  me-ui-sidebar-slidein:
+    keyframes: me-ui-sidebar-slidein
+    options:
+      delay: 0
+      duration: 250
+      easing: ease-out
+      fill: forwards
+  me-ui-notification-zoomup:
+    keyframes: zoomup
+    options:
+      delay: 250
+      duration: 250
+      fill: forwards
+  post1-slidein:
+    keyframes: post-slidein
+    options:
+      delay: 250
+      duration: 1000
+      easing: ease-out
+      fill: forwards
+  post2-slidein:
+    keyframes: post-slidein
+    options:
+      delay: 500
+      duration: 1000
+      easing: ease-out
+      fill: forwards
+  post3-slidein:
+    keyframes: post-slidein
+    options:
+      delay: 750
+      duration: 1000
+      easing: ease-out
+      fill: forwards
+  post4-slidein:
+    keyframes: post-slidein
+    options:
+      delay: 1000
+      duration: 1000
+      easing: ease-out
+      fill: forwards
+  dm-color-slidein:
+    keyframes: dm-color-slidein
+    options:
+      duration: 100
+      easing: ease-out
+  dm-timestamp-fadein:
+    keyframes: fadein
+    options:
+      duration: 1000
+  dm-text-slidein:
+    keyframes: dm-text-slidein
+    options:
+      duration: 1000
+      easing: ease-out
+  dm-image-slidein:
+    keyframes: dm-image-slidein
+    options:
+      delay: 100
+      duration: 500
+      easing: ease-out
+      fill: forwards
+  dm-player-color-slidein:
+    keyframes: dm-player-color-slidein
+    options:
+      duration: 100
+      easing: ease-out
+  dm-player-text-slidein:
+    keyframes: dm-player-text-slidein
+    options:
+      duration: 1000
+      easing: ease-out
+  dm-header-slidein:
+    keyframes: dm-header-slidein
+    options:
+      duration: 400
+      easing: ease-out
+  dm-footer-slidein:
+    keyframes: dm-footer-slidein
+    options:
+      duration: 400
+      easing: ease-out
+  dm-header-slideout:
+    keyframes: dm-header-slideout
+    options:
+      duration: 400
+      easing: ease-out
+  dm-footer-slideout:
+    keyframes: dm-footer-slideout
+    options:
+      duration: 400
+      easing: ease-out
+  dm-scroll:
+    keyframes: dm-scroll
+    options:
+      duration: 1000
+      easing: ease-out
+      fill: forwards
+  rotate:
+    keyframes: rotate
+    options:
+      duration: 1000
+      iterations: 1
+  long-screenshake:
+    # narrat-screenshake is a built-in animation that already comes with narrat
+    keyframes: narrat-screenshake
+    options:
+      # Here we're taking the built-in screenshake but using it with different options
+      duration: 150
+      iterations: 5
+
+keyframes:
+  me-ui-sidebar-slidein:
+    - left: -64px
+    - left: 0px
+  post-slidein:
+    - left: -543px
+    - left: 47.38px
+  dm-color-slidein:
+    - left: -5px
+    - left: 0px
+  dm-text-slidein:
+    - left: -590px
+    - left: 10px
+  dm-image-slidein:
+    - left: -240px
+    - left: 10px
+  dm-player-color-slidein:
+    - left: 600px
+    - left: 595px
+  dm-player-text-slidein:
+    - left: 600px
+    - left: 0px
+  dm-header-slidein:
+    - top: -100px
+    - top: 0px
+  dm-footer-slidein:
+    - top: 800px
+    - top: 700px
+  dm-header-slideout:
+    - top: 0px
+    - top: -100px
+  dm-footer-slideout:
+    - top: 700px
+    - top: 800px
+  dm-scroll:
+    - top: 100px
+    - top: -500px
+  fadein:
+    - opacity: 0
+    - opacity: 1
+  rotate:
+    - transform: rotate(0deg)
+    - transform: rotate(360deg)
+  zoomup:
+    - transform: scale(0)
+    - transform: scale(1)

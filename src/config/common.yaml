@@ -1,0 +1,47 @@
+---
+gameTitle: Kogomi
+saveFileName: Narrat yakugaki
+images:
+  me-write: img/me/write.png.webp
+  me-dm: img/me/dm.png.webp
+  me-dm-notification: img/me/dm-notification.png.webp
+  me-power: img/me/powerbutton.png.webp
+  me-back: img/me/backbutton.png.webp
+  me-photo: img/me/photobutton.png.webp
+  icon-kogomi: img/me/kogomi.webp
+  icon-kaidou: img/me/kaidou.png.webp
+  icon-ulsite: img/me/ulsite.png.webp
+  icon-anon: img/me/anon.png.webp
+  icon-shanks: img/me/face.webp
+  shanks-face: img/me/face.webp
+  morinonaka: img/backgrounds/morinonaka.webp
+dialogPanel:
+  textSpeed: 30
+  animateText: true
+  timeBetweenLines: 100
+  overlayMode: true
+  rightOffset: 0
+  bottomOffset: 0
+  width: 373
+  height: 800
+layout:
+  backgrounds:
+    width: 1440
+    height: 800
+  dialogBottomPadding: 70
+  mobileDialogHeightPercentage: 60
+  verticalLayoutThreshold: 600
+  portraits:
+    width: 100
+    height: 100
+notifications:
+  timeOnScreen: 2.5
+  alsoPrintInDialogue: true
+hudStats: {}
+interactionTags:
+  default:
+    onlyInteractOutsideOfScripts: true
+menuButtons: {}
+saves:
+  mode: manual
+  slots: 10
