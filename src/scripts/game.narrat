@@ -17,8 +17,9 @@ main:
   set data.player "player"
   set data.playerName "「」"  // %{$data.playerName} で中身を文中に表示できる。
   set data.kogomi "unknown"
-  set data.kogomiSuki 0
+  set data.kogomiSuki 5
   set data.countSansai 0
+  set data.bgmOn false
 
   // place
   set_screen @empty 0
@@ -40,7 +41,21 @@ main:
   set_screen mori 0 fadein 1000
   set_screen @empty 1
 
-  play music Pohadka
+  choice:
+    "日本在住ですか？"
+    "はい":
+      choice:
+        "BGMを流しますか？"
+        "はい":
+          "BGMをオンにします。"
+          set data.bgmOn true
+        "いいえ":
+          "BGMをオフにします。"
+    "いいえ":
+      "わかりました。でも日本語版しかないよごめんね。"
+  
+  if (== $data.bgmOn true):
+    play music andante
 
   "ブルルルル…"
 
@@ -179,6 +194,9 @@ main:
 
 lookfor_taranome:
   set_screen taranome 0 slide-left 1000
+  
+  if (== $data.bgmOn true):
+    play music adagio
   
   var hitboxTaranome (create_object 725 299)
   set hitboxTaranome.width 50

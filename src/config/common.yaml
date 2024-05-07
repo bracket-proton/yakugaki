@@ -16,7 +16,7 @@ images:
   shanks-face: img/me/face.webp
   morinonaka: img/backgrounds/morinonaka.webp
 dialogPanel:
-  textSpeed: 30
+  textSpeed: 90
   animateText: true
   timeBetweenLines: 100
   overlayMode: true

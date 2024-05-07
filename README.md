@@ -1,3 +1,31 @@
+# Kogomi
+
+女の子と山菜を採るノベルゲーム
+
+・アップデート
+
+2024.05.07　システム：楽曲の差し替え、一部選択肢の並び替え、READMEの整備
+
+・使用フォント
+
+はちまるポップ　Copyright 2020 The Hachi Maru Pop Project Authors (https://github.com/noriokanisawa/HachiMaruPop)
+
+よもぎフォント　Copyright 2020 The Yomogi Project Authors (https://github.com/satsuyako/YomogiFont)
+
+IBM Plex Sans JP　Copyright © 2017 IBM Corp
+
+・使用楽曲
+
+Pohádka (Janáček, Leoš)　 Le Chant du Monde, LD-M-8152 (P) 1956
+
+※日本国内でのプレイのみ想定
+
+・その他の画像やスクリプトについて
+
+MITライセンスでライセンスされる。
+
+以下NarratのREADMEテンプレート
+
 # Narrat Template
 
 Template app for [Narrat](https://github.com/nialna/narrat).

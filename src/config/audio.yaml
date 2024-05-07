@@ -1,7 +1,13 @@
 files:
-  Pohadka:
+  andante:
     loop: true
-    src: music/IMSLP426388-PMLP118048-Janacek_Pohadka_Un_Conte_Boschi_Sadlo.mp3
+    src: music/01_Janacek_Pohadka_Un_Conte_Boschi_Sadlo.FLAC
+  adagio:
+    loop: true
+    src: music/02_Janacek_Pohadka_Un_Conte_Boschi_Sadlo.FLAC
+  Allegro:
+    loop: true
+    src: music/03_Janacek_Pohadka_Un_Conte_Boschi_Sadlo.FLAC
 options:
   volume: 0.5
   musicFadeInTime: 0.5

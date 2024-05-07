@@ -50,7 +50,22 @@ function fakeGameloopForSteam() {
   requestAnimationFrame(fakeGameloopForSteam);
 }
 
+// 追加スタートメニューのプラグイン;
+export class StartButtonsPlugin extends NarratPlugin {
+  public startMenuButtons = [
+    {
+      id: "about",
+      text: "About",
+      action: () =>
+        window.open(
+          "https://github.com/bracket-proton/yakugaki/blob/main/README.md",
+        ),
+    },
+  ];
+}
+
 window.addEventListener("load", () => {
+  registerPlugin(new StartButtonsPlugin());
   if (useSteam) {
     registerPlugin(new SteamPlugin());
   }
