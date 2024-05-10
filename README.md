@@ -2,21 +2,19 @@
 
 女の子と山菜を採るノベルゲーム
 
-・プレイ方法
+## プレイ方法
 
-ーブラウザ版
+・ブラウザ版
 
 Cloudflare Pagesでホスティングしている。
 
 https://yakugaki.pages.dev
 
 > [!IMPORTANT]
-
 > [Cloudflare Web Analytics](https://www.cloudflare.com/ja-jp/web-analytics/)を利用していますが*アクセスした時・数、リファラ、パス、ブラウザ、OS、デバイスタイプ（PCか携帯か）のみわかります。*それらは紐づけされていなく、ユニークユーザなどもわかりません。またトラッキングも行うことができません。
-
 > サービス元の仕様変更が無い限り広告が表示されることはありません。
 
-ー自分でビルド
+・自分でビルド
 
 ビルドしたプログラムはdistフォルダに生成される。実行ファイルではないので注意。
 
@@ -38,11 +36,11 @@ npm start
 
 [ドキュメント](https://docs.narrat.dev/jp/guides/getting-started.html)はこちらです
 
-・アップデート
+## アップデート
 
 2024.05.07　システム：楽曲の差し替え、一部選択肢の並び替え、READMEの整備　https://4e11ae42.yakugaki.pages.dev
 
-・使用フォント
+## 使用フォント
 
 はちまるポップ　Copyright 2020 The Hachi Maru Pop Project Authors (https://github.com/noriokanisawa/HachiMaruPop)
 
@@ -50,13 +48,13 @@ npm start
 
 IBM Plex Sans JP　Copyright © 2017 IBM Corp
 
-・使用楽曲
+## 使用楽曲
 
 Pohádka (Janáček, Leoš)　 Le Chant du Monde, LD-M-8152 (P) 1956
 
 ※日本国内でのプレイのみ想定
 
-・その他の画像やスクリプトについて
+## その他の画像やスクリプトについて
 
 MITライセンスでライセンスされる。
 
