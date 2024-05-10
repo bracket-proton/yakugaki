@@ -2,9 +2,45 @@
 
 女の子と山菜を採るノベルゲーム
 
+・プレイ方法
+
+ーブラウザ版
+
+Cloudflare Pagesでホスティングしている。
+
+https://yakugaki.pages.dev
+
+> [!IMPORTANT]
+
+> [Cloudflare Web Analytics](https://www.cloudflare.com/ja-jp/web-analytics/)を利用していますが*アクセスした時・数、リファラ、パス、ブラウザ、OS、デバイスタイプ（PCか携帯か）のみわかります。*それらは紐づけされていなく、ユニークユーザなどもわかりません。またトラッキングも行うことができません。
+
+> サービス元の仕様変更が無い限り広告が表示されることはありません。
+
+ー自分でビルド
+
+ビルドしたプログラムはdistフォルダに生成される。実行ファイルではないので注意。
+
+必要なもの
+
+[Git](https://git-scm.com.)
+
+[Node.js](https://nodejs.org.) 20+
+
+```
+git clone https://github.com/bracket-proton/yakugaki.git
+cd yakugaki
+npm install
+npm run build
+npm start
+```
+
+あら！ゲームをビルドできるならもう開発環境は整ってますね😁
+
+[ドキュメント](https://docs.narrat.dev/jp/guides/getting-started.html)はこちらです
+
 ・アップデート
 
-2024.05.07　システム：楽曲の差し替え、一部選択肢の並び替え、READMEの整備
+2024.05.07　システム：楽曲の差し替え、一部選択肢の並び替え、READMEの整備　https://4e11ae42.yakugaki.pages.dev
 
 ・使用フォント
 
@@ -23,6 +59,10 @@ Pohádka (Janáček, Leoš)　 Le Chant du Monde, LD-M-8152 (P) 1956
 ・その他の画像やスクリプトについて
 
 MITライセンスでライセンスされる。
+
+画像は[public/img](/public/img/)に格納されている。
+
+設定は[src/config](/src/config/)に、Narratスクリプトは[src/scripts](/src/scripts/)にあります。
 
 以下NarratのREADMEテンプレート
 
